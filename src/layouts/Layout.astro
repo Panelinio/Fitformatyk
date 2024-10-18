@@ -1,50 +1,120 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Strona dla pasjonatów informatyki chcących zadbać o swoje zdrowie."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+  :root {
+    --ziel: #04e762;
+    --czar: #000a0a;
+    --czer: #9e0031;
+    --nieb: #5bc0eb;
+    --pom: #ff9914;
+    --bia: #fff;
+  }
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  html {
+    font-family: system-ui, sans-serif;
+    background: var(--czar);
+  }
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  main {
+    flex: 1;
+    margin: auto;
+    width: 100%;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--bia);
+  }
+  article {
+    display: flex;
+    padding-top: 6rem;
+    margin: 0;
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+  }
+  nav {
+    margin-bottom: 1em;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: right;
+    list-style: none;
+  }
+
+  nav ul li {
+    margin-right: 1em;
+  }
+
+  nav ul li:last-child {
+    margin-right: 5px;
+  }
+
+  nav ul li a {
+    color: var(--bia);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: var(--ziel);
+  }
+
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+    color: var(--ziel);
+  }
+
+  footer {
+    margin-top: auto;
+    text-align: center;
+    color: var(--czar);
+    background: var(--ziel);
+  }
 </style>
