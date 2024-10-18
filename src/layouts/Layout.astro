@@ -22,6 +22,9 @@ const { title } = Astro.props;
   </body>
 </html>
 <style is:global>
+	@import url('https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Scada:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&display=swap');
   :root {
     --ziel: #04e762;
     --czar: #000a0a;
@@ -29,6 +32,9 @@ const { title } = Astro.props;
     --nieb: #5bc0eb;
     --pom: #ff9914;
     --bia: #fff;
+	--quantico: 'Quantico', sans-serif;
+	--scada: 'Scada', sans-serif;
+	--amiko: 'Amiko', sans-serif;
   }
   * {
     box-sizing: border-box;
@@ -36,7 +42,7 @@ const { title } = Astro.props;
     margin: 0;
   }
   html {
-    font-family: system-ui, sans-serif;
+    font-family: var(--amiko);
     background: var(--czar);
   }
   code {
@@ -103,6 +109,7 @@ const { title } = Astro.props;
   }
 
   h1 {
+	font-family: var(--quantico);
     font-size: 4rem;
     font-weight: 700;
     line-height: 1;
